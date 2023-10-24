@@ -1,0 +1,63 @@
+PROCEDURE procedure_PS(VAR ps :FLOAT ,T1 ,T2 )
+
+BEGIN
+FOR i FROM 0 to T1.length-1 STEP 1 DO
+ps:=ps +T1[i] * T2[i]
+
+END
+
+ALGORITHM ProduitScolaire
+VAR
+    i :INTEGER;
+    T1 : ARRAY_OF FLOAT[n];
+    T2 : ARRAY_OF FLOAT[n];
+    ps:FLOAT;
+BEGIN
+  FOR i FROM 0 TO T1.length-1 STEP 1 DO
+  READ(T1)
+  END_FOR
+  FOR i FROM 0 TO T2.length-1 STEP 1 DO
+  READ(T2)
+  END_FOR
+procedure_PS(T1,T2,ps)
+IF (ps==0) THEN 
+    Write("les vecteurs sont orthogonaux")
+ELSE 
+    Write("les vecteurs sont non orthogonaux")
+END_IF
+END
+
+///////////////////////////////////////////////////////////////////////
+
+FUNCTION function_PS( ) : FLOAT
+VAR
+    i :INTEGER;
+    T1 : ARRAY_OF FLOAT[n];
+    T2 : ARRAY_OF FLOAT[n];
+    ps:FLOAT;
+BEGIN
+    FOR i FROM 0 TO n STEP 1  DO
+        ps=ps+ T1[i] * T2[i]
+    END_FOR
+    RETURN (ps) ;
+END
+ALGORITHM ProduitScolaire
+VAR
+    i :INTEGER;
+    T1 : ARRAY_OF FLOAT[n];
+    T2 : ARRAY_OF FLOAT[n];
+    ps:FLOAT;
+BEGIN
+  FOR i FROM 0 TO T1.length-1 STEP 1 DO
+  READ(T1)
+  END_FOR
+  FOR i FROM 0 TO T2.length-1 STEP 1 DO
+  READ(T2)
+  END_FOR
+ps:=function_PS(ps)
+IF (ps==0) THEN   
+    Write("les vecteurs sont orthogonaux")
+ELSE 
+    Write("les vecteurs sont non orthogonaux")
+END_IF
+END
